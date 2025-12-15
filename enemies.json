@@ -1,0 +1,462 @@
+{
+  "enemies": [
+    {
+      "id": "priestess",
+      "name": "Priestess",
+      "gender": "f",
+      "threat_level": 2,
+      "portrait": "assets/img/enemy_portrait/priestess.png",
+      "description": "A devoted leader to the cultists in service of the Old Ones. She wields forbidden knowledge and dark rituals to shatter the sanity of those who cross her.",
+      "base_stats": {
+        "hp": 14,
+        "basic_attack": {
+          "dice": 1,
+          "sides": 12
+        },
+        "sanity_damage": 6,
+        "defense": 2,
+        "init": 2,
+        "effects": []
+      },
+      "audio": {
+        "voice_hurt": "enemy_female_hurt",
+        "voice_death": "enemy_female_death",
+        "voice_combat_start": "enemy_female_combat_start"
+      },
+      "xp_reward": 40
+    },
+    {
+      "id": "mossleech",
+      "name": "Moss Leech",
+      "gender": "i",
+      "threat_level": 1,
+      "portrait": "assets/img/enemy_portrait/mossleech.png",
+      "description": "A grotesque, slug-like creature covered in bioluminescent moss. It attaches itself to its prey, draining blood and vitality with ravenous appetite.",
+      "base_stats": {
+        "hp": 8,
+        "basic_attack": {
+          "dice": 1,
+          "sides": 6
+        },
+        "sanity_damage": 0,
+        "defense": 3,
+        "init": 7,
+        "effects": ["bleeding", 0.25]
+      },
+      "audio": {
+        "voice_hurt": "enemy_insect_hurt",
+        "voice_death": "enemy_insect_death",
+        "voice_combat_start": "enemy_insect_combat_start"
+      },
+      "xp_reward": 20
+    },
+    {
+      "id": "cultist",
+      "name": "Cultist",
+      "gender": "f",
+      "threat_level": 1,
+      "portrait": "assets/img/enemy_portrait/cultist.png",
+      "description": "A devoted cultist to the dark powers outside the dark borderlines of reality. A fanatic with more zeal than threat.",
+      "base_stats": {
+        "hp": 8,
+        "basic_attack": {
+          "dice": 1,
+          "sides": 6
+        },
+        "sanity_damage": 3,
+        "defense": 0,
+        "init": 2,
+        "effects": []
+      },
+      "audio": {
+        "voice_hurt": "enemy_female_hurt",
+        "voice_death": "enemy_female_death",
+        "voice_combat_start": "enemy_female_combat_start"
+      },
+      "xp_reward": 20
+    },
+        {
+      "id": "aberrant_beast",
+      "name": "Aberrant Beast",
+      "gender": "o",
+      "threat_level": 1,
+      "portrait": "assets/img/enemy_portrait/aberrant_beast.png",
+      "description": "There is no telling what this animal is now, or what it sees with its eyes.",
+      "base_stats": {
+        "hp": 12,
+        "basic_attack": {
+          "dice": 2,
+          "sides": 4
+        },
+        "sanity_damage": 2,
+        "defense": 1,
+        "init": 4,
+        "effects": []
+      },
+      "audio": {
+        "voice_hurt": "enemy_beast_hurt",
+        "voice_death": "enemy_beast_death",
+        "voice_combat_start": "enemy_beast_combat_start"
+      },
+      "xp_reward": 20
+    },
+    {
+      "id": "rat_man",
+      "name": "Rat Man",
+      "gender": "o",
+      "threat_level": 1,
+      "portrait": "assets/img/enemy_portrait/rat_man.png",
+      "description": "These nightmare hybrids stalk the dark crypts. Once human, they have been twisted by dark rituals into rat-like abominations.",
+      "base_stats": {
+        "hp": 8,
+        "basic_attack": {
+          "dice": 1,
+          "sides": 6
+        },
+        "sanity_damage": 0,
+        "defense": 1,
+        "init": 4,
+        "effects": ["poisoned", 0.2]
+      },
+      "audio": {
+        "voice_hurt": "enemy_monster_hurt",
+        "voice_death": "enemy_monster_death",
+        "voice_combat_start": "enemy_monster_combat_start"
+      },
+      "xp_reward": 20
+    },
+    {
+      "id": "sewer_centipede",
+      "name": "Sewer Centipede",
+      "gender": "i",
+      "threat_level": 1,
+      "portrait": "assets/img/enemy_portrait/sewer_centipede.png",
+      "description": "A mandibled horror grown to unnatural, aberrant size, its many legs scuttling with eerie speed.",
+      "base_stats": {
+        "hp": 12,
+        "basic_attack": {
+          "dice": 1,
+          "sides": 10
+        },
+        "sanity_damage": 0,
+        "defense": 2,
+        "init": 5,
+        "effects": ["poisoned", 0.3]
+      },
+      "audio": {
+        "voice_hurt": "enemy_insect_hurt",
+        "voice_death": "enemy_insect_death",
+        "voice_combat_start": "enemy_insect_hurt"
+      },
+      "xp_reward": 20
+    },
+        {
+      "id": "male_grave_robber",
+      "name": "Male Grave Robber",
+      "gender": "m",
+      "threat_level": 1,
+      "portrait": "assets/img/enemy_portrait/male_grave_robber.png",
+      "description": "A male grave robber, skilled in stealth and desecration, prowls the crypts in search of valuable relics.",
+      "base_stats": {
+        "hp": 8,
+        "basic_attack": {
+          "dice": 1,
+          "sides": 6
+        },
+        "sanity_damage": 0,
+        "defense": 2,
+        "init": 3,
+        "effects": []
+      },
+      "audio": {
+        "voice_hurt": "enemy_male_hurt",
+        "voice_death": "enemy_male_death",
+        "voice_combat_start": "enemy_male_combat_start"
+      },
+            "xp_reward": 20
+    },
+            {
+      "id": "corpse_eater",
+      "name": "Corpse Eater",
+      "gender": "o",
+      "threat_level": 1,
+      "portrait": "assets/img/enemy_portrait/corpse_eater.png",
+      "description": "These crypts regularly fill with the dead, attracting scavengers that feast on the remains.",
+      "base_stats": {
+        "hp": 10,
+        "basic_attack": {
+          "dice": 1,
+          "sides": 6
+        },
+        "sanity_damage": 1,
+        "defense": 0,
+        "init": 2,
+        "effects": []
+      },
+      "audio": {
+        "voice_hurt": "enemy_beast_hurt",
+        "voice_death": "enemy_beast_death",
+        "voice_combat_start": "enemy_beast_combat_start"
+      },
+            "xp_reward": 20
+    },
+            {
+      "id": "female_grave_robber",
+      "name": "Female Grave Robber",
+      "gender": "f",
+      "threat_level": 1,
+      "portrait": "assets/img/enemy_portrait/female_grave_robber.png",
+      "description": "A female grave robber, skilled in stealth and desecration, prowls the crypts in search of valuable relics.",
+      "base_stats": {
+        "hp": 8,
+        "basic_attack": {
+          "dice": 1,
+          "sides": 6
+        },
+        "sanity_damage": 0,
+        "defense": 2,
+        "init": 3,
+        "effects": []
+      },
+      "audio": {
+        "voice_hurt": "enemy_female_hurt",
+        "voice_death": "enemy_female_death",
+        "voice_combat_start": "enemy_female_combat_start"
+      },
+            "xp_reward": 20
+    },
+                {
+      "id": "flesh_eating_vines",
+      "name": "Flesh Eating Vines",
+      "gender": "i",
+      "threat_level": 1,
+      "portrait": "assets/img/enemy_portrait/flesh_eating_vines.png",
+      "description": "Apparition of writhing vines that consume flesh with a hunger that never abates.",
+      "base_stats": {
+        "hp": 12,
+        "basic_attack": {
+          "dice": 1,
+          "sides": 6
+        },
+        "sanity_damage": 1,
+        "defense": 3,
+        "init": 3,
+        "effects": []
+      },
+      "audio": {
+        "voice_hurt": "enemy_insect_hurt",
+        "voice_death": "enemy_insect_death",
+        "voice_combat_start": "enemy_insect_hurt"
+      },
+            "xp_reward": 20
+    },
+        {
+      "id": "drowned_acolyte",
+      "name": "Drowned Acolyte",
+      "gender": "f",
+      "threat_level": 2,
+      "portrait": "assets/img/enemy_portrait/drowned_acolyte.png",
+      "description": "Robe drips black water, lungs gurgling with each step, eyes fixed on a point behind you.",
+      "base_stats": {
+        "hp": 20,
+        "basic_attack": {
+          "dice": 2,
+          "sides": 4
+        },
+        "sanity_damage": 12,
+        "defense": 4,
+        "init": 5,
+        "effects": []
+      },
+      "audio": {
+        "voice_hurt": "enemy_female_hurt",
+        "voice_death": "enemy_female_death",
+        "voice_combat_start": "enemy_female_combat_start"
+      },
+      "xp_reward": 40
+    },
+      {
+      "id": "leech_swarm",
+      "name": "Leech Swarm",
+      "gender": "i",
+      "threat_level": 2,
+      "portrait": "assets/img/enemy_portrait/leech_swarm.png",
+      "description": "A dark, seething carpet of leeches seeking any scrap of exposed flesh or cloth seam.",
+      "base_stats": {
+        "hp": 35,
+        "basic_attack": {
+          "dice": 1,
+          "sides": 12
+        },
+        "sanity_damage": 5,
+        "defense": 8,
+        "init": 5,
+        "effects": ["bleeding", 0.5]
+      },
+      "audio": {
+        "voice_hurt": "enemy_insect_hurt",
+        "voice_death": "enemy_insect_death",
+        "voice_combat_start": "enemy_insect_hurt"
+      },
+      "xp_reward": 40
+    },
+      {
+      "id": "flesh_golem",
+      "name": "Flesh Golem",
+      "gender": "o",
+      "threat_level": 3,
+      "portrait": "assets/img/enemy_portrait/flesh_golem.png",
+      "description": "A hulking construct of stitched flesh, sickening and perverse application of necromantic magic.",
+      "base_stats": {
+        "hp": 50,
+        "basic_attack": {
+          "dice": 3,
+          "sides": 6
+        },
+        "sanity_damage": 3,
+        "defense": 5,
+        "init": 2,
+        "effects": []
+      },
+      "audio": {
+        "voice_hurt": "enemy_beast_hurt",
+        "voice_death": "enemy_beast_death",
+        "voice_combat_start": "enemy_beast_combat_start"
+      },
+      "xp_reward": 75
+    },    
+          {
+      "id": "pit_butcher",
+      "name": "Pit Butcher",
+      "gender": "m",
+      "threat_level": 3,
+      "portrait": "assets/img/enemy_portrait/pit_butcher.png",
+      "description": "Apron so stained it glistens black, cleaver nicked with more bone than steel.",
+      "base_stats": {
+        "hp": 45,
+        "basic_attack": {
+          "dice": 3,
+          "sides": 6
+        },
+        "sanity_damage": 0,
+        "defense": 5,
+        "init": 2,
+        "effects": []
+      },
+      "audio": {
+        "voice_hurt": "enemy_male_hurt",
+        "voice_death": "enemy_male_death",
+        "voice_combat_start": "enemy_male_combat_start"
+      },
+          "xp_reward": 75
+        },
+      
+        {
+      "id": "dream_eater",
+      "name": "Dream Eater",
+      "gender": "o",
+      "threat_level": 3,
+      "portrait": "assets/img/enemy_portrait/dream_eater.png",
+      "description": "The dream eater consumes things beyond the veil of reality.",
+      "base_stats": {
+        "hp": 50,
+        "basic_attack": {
+          "dice": 1,
+          "sides": 6
+        },
+        "sanity_damage": 15,
+        "defense": 6,
+        "init": 2,
+        "effects": []
+      },
+      "audio": {
+        "voice_hurt": "enemy_beast_hurt",
+        "voice_death": "enemy_beast_death",
+        "voice_combat_start": "enemy_beast_combat_start"
+      },
+          "xp_reward": 75
+        },
+        {
+  "id": "astral_creeper",
+  "name": "Astral Creeper",
+  "threat_level": 1,
+  "portrait": "assets/img/enemy_portrait/astral_creeper.png",
+  "description": "The Malaligned Young of the Astral Summoner.",
+  "base_stats": {
+    "hp": 8,
+    "basic_attack": { "dice": 1, "sides": 6 },
+    "sanity_damage": 2,
+    "defense": 0,
+    "init": 5
+    
+  },
+  "xp_reward": 20,
+  "audio": {
+    "voice_hurt": "astral_creeper_hurt",
+    "voice_death": "astral_creeper_death"
+  }
+},
+{
+  "id": "astral_summoner",
+  "name": "Astral Summoner",
+  "threat_level": 4,
+  "portrait": "assets/img/enemy_portrait/astral_summoner.png",
+  "description": "The Astral Summoner beyond the veil of Stars, chanting a sanity-eating hymn that reshapes reality with every note.",
+  "base_stats": {
+    "hp": 85,
+    "basic_attack": { "dice": 2, "sides": 10 },
+    "sanity_damage": 10,
+    "defense": 4,
+    "init": 1,
+    "effects": ["immune_charm", "resist_bleed", "weak_physical"]
+  },
+  "xp_reward": 500,
+  "abilities": [
+    {
+      "id": "hymn_of_unbeing",
+      "name": "Hymn of Unbeing",
+      "type": "sanity_attack",
+      "description": "The Chorister sings a mind-shattering note. Deals heavy sanity damage to all party members.",
+      "sanity_damage": { "dice": 2, "sides": 8 },
+      "chance": 0.45
+    },
+    {
+      "id": "litany_of_the_spawned",
+      "name": "Litany of the Spawned",
+      "type": "summon",
+      "description": "Rips open its own flesh to birth aberrant minions.",
+      "summon_ids": ["astral_creeper"],
+      "summon_count": { "min": 1, "max": 3 },
+      "chance": 1.0
+    },
+    {
+      "id": "erode_flesh",
+      "name": "Erode Flesh",
+      "type": "hp_attack",
+      "description": "A tendril lashes out, rotting tissue upon contact.",
+      "damage": { "dice": 1, "sides": 12 },
+      "effect": {
+        "type": "poison",
+        "chance": 0.40,
+        "duration": 3,
+        "damage_per_turn": 4
+      },
+      "chance": 0.30
+    }
+  ],
+  "ai_logic": {
+    "summon_if_no_minions": true,
+    "preferred_ability_order": [
+      "litany_of_the_spawned",
+      "hymn_of_unbeing",
+      "erode_flesh"
+    ]
+  },
+  "audio": {
+    "voice_hurt": "astral_summoner_hurt",
+    "voice_death": "astral_summoner_death",
+    "voice_combat_start": "astral_summoner_arrival"
+  }
+}
+      ]
+  }

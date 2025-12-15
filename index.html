@@ -1,0 +1,110 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cryptonauts Combat</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23090a14'/%3E%3Cpath d='M8 8h16v16H8z' fill='%23c4a46b'/%3E%3C/svg%3E">
+</head>
+<body>
+  <div id="combat-start-overlay" class="combat-start-overlay" aria-hidden="false" role="button" tabindex="0">
+    <div class="combat-start-inner">
+      <p class="overlay-prelude">something approaches...</p>
+      <h2>⚔️ Fight ⚔️</h2>
+      <p class="overlay-subtext">Click anywhere to begin the encounter.</p>
+    </div>
+  </div>
+
+  <div id="combat-screen" class="pre-init">
+    <!-- Simplified title area -->
+    <div id="battle-header">
+      <div class="header-left">
+        <h1 id="encounter-title">Loading encounter...</h1>
+      </div>
+      <div id="header-controls">
+        <button id="btn-fullscreen" class="header-btn" title="Toggle Fullscreen (F11)">⛶</button>
+        <button id="btn-main-menu" type="button" class="ghost-btn">Main Menu</button>
+        <button id="btn-combat-flee" type="button" class="flee-action-btn">Flee</button>
+      </div>
+    </div>
+
+    <div id="battle-area">
+      <!-- Background image -->
+      <div id="backdrop" class="combat-bg"></div>
+      
+      <div id="battle-scene">
+        <!-- Left side - Player and ally characters side by side -->
+        <div id="character-portraits">
+          <div id="player-portrait" class="portrait">
+            <div class="health-overlay"></div>
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Player" loading="lazy">
+            <div class="status-emoji-row"></div>
+            <div class="stats">
+              <div class="character-name"><span id="player-name"></span> <span id="player-level"></span></div>
+              <div>HP: <span id="player-hp"></span></div>
+              <div>Sanity: <span id="player-sanity"></span></div>
+            </div>
+          </div>
+          
+          <div id="ally-portrait" class="portrait">
+            <div class="health-overlay"></div>
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Ally" loading="lazy">
+            <div class="status-emoji-row"></div>
+            <div class="stats">
+              <div class="character-name"><span id="companion-name"></span> <span id="companion-level"></span></div>
+              <div>HP: <span id="ally-hp"></span></div>
+              <div>Sanity: <span id="ally-sanity"></span></div>
+            </div>
+          </div>
+          
+          <!-- Summoned NPCs area -->
+          <div id="summon-area">
+            <!-- Summon portraits will be generated dynamically -->
+          </div>
+        </div>
+        
+        <!-- Right side - Enemy characters side by side -->
+        <div id="enemy-area">
+          <!-- Enemy portraits will be generated dynamically -->
+        </div>
+      </div>
+      
+      <!-- Fixed bottom UI section -->
+      <div id="bottom-ui">
+        <div id="actions" aria-live="polite">
+          <!-- Action buttons will be populated dynamically from player data -->
+        </div>
+
+        <div id="item-selection" class="selection-panel" aria-live="polite">
+          <p id="item-selection-prompt">Select an item to use:</p>
+          <div id="item-list" class="selection-list"></div>
+        </div>
+        
+        <!-- Target selection prompt (shown after item is selected) -->
+        <div id="target-selection" class="selection-panel" aria-live="polite">
+          <p id="target-selection-prompt">Select a target:</p>
+        </div>
+        
+        <div id="combat-log"></div>
+      </div>
+    </div>
+    
+    <!-- Item tooltip (positioned absolutely, follows mouse) -->
+    <div id="item-tooltip" class="item-tooltip" aria-hidden="true">
+      <img id="tooltip-image" src="" alt="Item">
+      <div class="tooltip-content">
+        <h4 id="tooltip-name"></h4>
+        <p id="tooltip-description"></p>
+        <div id="tooltip-effects" class="tooltip-effects"></div>
+      </div>
+    </div>
+    </div>
+
+  <script src="data_fallbacks.js"></script>
+  <script src="config.js"></script>
+  <script src="item_system.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

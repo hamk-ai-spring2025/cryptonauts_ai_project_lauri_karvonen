@@ -1,0 +1,53 @@
+{
+  "save_slot": "default",
+  "meta": {
+    "label": "Demo Slot",
+    "last_updated": "2025-12-12T00:00:00Z",
+    "notes": "Initial party with shared monk archetype"
+  },
+  "party": [
+    {
+      "slot": "player",
+      "name": "Cryptonaut",
+      "gender": "m",
+      "character_file": "characters.json",
+      "character_id": "monk",
+      "level": 0,
+      "xp": 0,
+      "xpToNextLevel": 50,
+      "hp": 30,
+      "sanity": 20,
+      "inventory": ["herbal_tonic"]
+    },
+    {
+      "slot": "companion",
+      "name": "Lydia",
+      "gender": "f",
+      "character_file": "characters.json",
+      "character_id": "monk",
+      "level": 0,
+      "xp": 0,
+      "xpToNextLevel": 50,
+      "hp": 30,
+      "sanity": 20,
+      "inventory": ["herbal_tonic"]
+    }
+  ],
+  "inventory": {
+    "vial_vital_humours": 2,
+    "tincture_of_lucidity": 1,
+    "herbal_tonic": 3
+  },
+  "encounter": {
+    "encounter_id": "astral_sanctum",
+    "encounter_name": "The Astral Summoner's Sanctum",
+    "background": "./assets/img/environment/ComfyUI_00901_.png",
+    "enemies": [
+      { "id": "astral_summoner", "position": 1 }
+    ],
+    "loot": {
+      "gold": 250,
+      "items": ["healing_potion", "sanity_tonic", "elixir_of_fortitude"]
+    }
+  }
+}

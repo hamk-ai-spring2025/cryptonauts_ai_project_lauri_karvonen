@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cryptonauts - Start Screen</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="exploration.css">
+</head>
+<body>
+  
+  <!-- ======================== -->
+  <!-- START MENU SCREEN -->
+  <!-- ======================== -->
+  <div id="start-menu" class="menu-screen">
+    <div class="menu-container">
+      <div class="menu-title">
+        <h1>CRYPTONAUTS</h1>
+        <p class="subtitle">Descend into Madness</p>
+      </div>
+      
+      <div class="menu-buttons">
+        <button id="btn-new-game" class="menu-btn primary">New Game</button>
+        <button id="btn-continue" class="menu-btn" disabled>Continue</button>
+        <button id="btn-tutorial" class="menu-btn">Tutorial</button>
+        <button id="btn-options-start" class="menu-btn">Options</button>
+        <button id="btn-fullscreen" class="menu-btn small" title="Toggle Fullscreen (F11)">⛶ Fullscreen</button>
+      </div>
+      
+      <div class="menu-footer">
+        <p class="version">v0.1 Alpha</p>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- ======================== -->
+  <!-- CHARACTER CREATION SCREEN -->
+  <!-- ======================== -->
+  <div id="character-creation" class="menu-screen hidden">
+    <div class="creation-container">
+      <h1>Prepare Your Expedition</h1>
+      
+      <!-- Player Section -->
+      <section class="creation-section">
+        <h2>👤 Your Character</h2>
+        
+        <div class="creation-row">
+          <label for="player-name-input">Name</label>
+          <input type="text" id="player-name-input" placeholder="Enter your name..." maxlength="24">
+        </div>
+        
+        <div class="creation-row">
+          <label>Class</label>
+          <div id="player-class-select" class="class-selector">
+            <!-- Class cards inserted via JS -->
+          </div>
+        </div>
+        
+        <div class="creation-row">
+          <label>Gender</label>
+          <div class="gender-selector">
+            <button class="gender-btn selected" data-gender="m">♂ Male</button>
+            <button class="gender-btn" data-gender="f">♀ Female</button>
+          </div>
+          <p class="gender-note" id="gender-lock-note"></p>
+        </div>
+        
+        <!-- Player Preview -->
+        <div class="character-preview" id="player-preview">
+          <img id="player-preview-portrait" src="assets/img/ally_portrait/warrior_male.png" alt="Player">
+          <div class="preview-stats" id="player-preview-stats">
+            <div class="stat-row"><span>HP:</span> <span id="preview-player-hp">30</span></div>
+            <div class="stat-row"><span>Sanity:</span> <span id="preview-player-sanity">20</span></div>
+            <div class="stat-row"><span>Attack:</span> <span id="preview-player-attack">2d6</span></div>
+            <div class="stat-row"><span>Defense:</span> <span id="preview-player-defense">2</span></div>
+          </div>
+          <div class="preview-abilities" id="player-preview-abilities"></div>
+        </div>
+      </section>
+      
+      <!-- Companion Section -->
+      <section class="creation-section">
+        <h2>🤝 Choose Your Companion</h2>
+        
+        <div id="companion-select" class="companion-selector">
+          <!-- Companion cards inserted via JS -->
+        </div>
+        
+        <!-- Companion Preview -->
+        <div class="character-preview" id="companion-preview">
+          <img id="companion-preview-portrait" src="assets/img/ally_portrait/alchemist_female.png" alt="Companion">
+          <div class="preview-info">
+            <h3 id="companion-preview-name">Dr. Eleanor Marsh</h3>
+            <p class="preview-class" id="companion-preview-class">Alchemist</p>
+            <p class="preview-backstory" id="companion-preview-backstory">A disgraced professor...</p>
+          </div>
+          <div class="preview-stats" id="companion-preview-stats">
+            <div class="stat-row"><span>HP:</span> <span id="preview-companion-hp">24</span></div>
+            <div class="stat-row"><span>Sanity:</span> <span id="preview-companion-sanity">20</span></div>
+            <div class="stat-row"><span>Attack:</span> <span id="preview-companion-attack">1d8</span></div>
+            <div class="stat-row"><span>Defense:</span> <span id="preview-companion-defense">1</span></div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Action Buttons -->
+      <div class="creation-actions">
+        <button id="btn-back-to-menu" class="menu-btn">Back</button>
+        <button id="btn-begin-expedition" class="menu-btn primary">Begin Expedition</button>
+      </div>
+    </div>
+    
+    <!-- Background effects -->
+    <div class="menu-bg-effects">
+      <div class="fog fog-1"></div>
+      <div class="fog fog-2"></div>
+    </div>
+  </div>
+
+  <!-- ======================== -->
+  <!-- OPTIONS MODAL -->
+  <!-- ======================== -->
+  <div id="options-modal" class="menu-overlay hidden">
+    <div class="modal-container options-container">
+      <h2>OPTIONS</h2>
+      
+      <div class="options-section">
+        <h3>🔊 Audio</h3>
+        <div class="option-row">
+          <label for="music-volume">Music Volume</label>
+          <input type="range" id="music-volume" min="0" max="100" value="70">
+          <span id="music-volume-value">70%</span>
+        </div>
+        <div class="option-row">
+          <label for="sfx-volume">SFX Volume</label>
+          <input type="range" id="sfx-volume" min="0" max="100" value="80">
+          <span id="sfx-volume-value">80%</span>
+        </div>
+      </div>
+      
+      <div class="options-section">
+        <h3>👁️ Visual Effects</h3>
+        <div class="option-row">
+          <label for="sanity-jitter">Sanity Screen Effects</label>
+          <input type="checkbox" id="sanity-jitter" checked>
+          <span class="toggle-label">Enabled</span>
+        </div>
+        <div class="option-row">
+          <label for="text-scramble">Text Scrambling</label>
+          <input type="checkbox" id="text-scramble" checked>
+          <span class="toggle-label">Enabled</span>
+        </div>
+      </div>
+      
+      <div class="options-section">
+        <h3>🤖 Gemini AI</h3>
+        <div class="option-row">
+          <label for="enable-gemini">Enable Gemini Narration</label>
+          <input type="checkbox" id="enable-gemini" checked>
+          <span class="toggle-label">Enabled</span>
+        </div>
+        <div class="option-row api-key-row">
+          <label for="gemini-api-key">API Key</label>
+          <input type="password" id="gemini-api-key" placeholder="Enter your Gemini API key">
+          <button id="btn-toggle-key" class="small-btn">Show</button>
+        </div>
+        <div class="option-row">
+          <button id="btn-test-gemini" class="small-btn">Test Connection</button>
+          <span id="gemini-test-result" class="test-result"></span>
+        </div>
+      </div>
+      
+      <div class="modal-buttons">
+        <button id="btn-options-save" class="menu-btn primary">Save & Close</button>
+        <button id="btn-options-cancel" class="menu-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== -->
+  <!-- CONFIRM DIALOG -->
+  <!-- ======================== -->
+  <div id="confirm-dialog" class="menu-overlay hidden">
+    <div class="modal-container confirm-container">
+      <h3 id="confirm-title">Confirm</h3>
+      <p id="confirm-message">Are you sure you are ready to enter madness?</p>
+      <div class="modal-buttons">
+        <button id="btn-confirm-yes" class="menu-btn danger">Yes</button>
+        <button id="btn-confirm-no" class="menu-btn primary">No</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== -->
+  <!-- TUTORIAL MODAL -->
+  <!-- ======================== -->
+  <div id="tutorial-modal" class="menu-overlay hidden">
+    <div class="modal-container tutorial-container">
+      <div class="tutorial-header">
+        <h2>HOW TO PLAY</h2>
+        <div class="tutorial-progress">
+          <span id="tutorial-current">1</span> / <span id="tutorial-total">6</span>
+        </div>
+      </div>
+      
+      <div class="tutorial-content">
+        <!-- Slide 1: Welcome & Overview -->
+        <div class="tutorial-slide active" data-slide="1">
+          <div class="tutorial-image">
+            <img src="assets/img/environment/title_screen.png" alt="Welcome">
+          </div>
+          <div class="tutorial-text">
+            <h3>⚰️ Welcome to Cryptonauts</h3>
+            <p>You are an explorer descending into an ancient, eldritch crypt filled with horrors and treasures. Lead your party through its depths, fight abominations, manage your sanity, and uncover dark secrets.</p>
+            <p class="tutorial-tip">💡 <strong>Tip:</strong> The deeper you go, the stronger the enemies—but the greater the rewards.</p>
+          </div>
+        </div>
+        
+        <!-- Slide 2: Combat System -->
+        <div class="tutorial-slide" data-slide="2">
+          <div class="tutorial-image">
+            <img src="assets/img/environment/crypt_01.png" alt="Combat">
+          </div>
+          <div class="tutorial-text">
+            <h3>⚔️ Turn-Based Combat</h3>
+            <p>Combat is turn-based with initiative order. Each character has:</p>
+            <ul>
+              <li><strong>HP</strong> — Health points. Reach 0 and you die.</li>
+              <li><strong>Attack</strong> — Roll dice to deal damage (e.g., 2d6 = roll 2 six-sided dice).</li>
+              <li><strong>Defense</strong> — Flat damage reduction from attacks.</li>
+              <li><strong>Abilities</strong> — Special skills that cost mana or have cooldowns.</li>
+            </ul>
+            <p class="tutorial-tip">💡 <strong>Tip:</strong> Click an enemy to target them, then choose your action.</p>
+          </div>
+        </div>
+        
+        <!-- Slide 3: Sanity System -->
+        <div class="tutorial-slide" data-slide="3">
+          <div class="tutorial-image sanity-demo">
+            <img src="assets/img/ally_portrait/warrior_male.png" alt="Sanity">
+            <div class="sanity-bar-demo">
+              <div class="sanity-label">Sanity: 45/75</div>
+              <div class="sanity-fill" style="width: 60%;"></div>
+            </div>
+          </div>
+          <div class="tutorial-text">
+            <h3>🧠 The Sanity System</h3>
+            <p>Your mind is fragile. <strong>Sanity</strong> drains from horrific encounters, using certain abilities, and witnessing eldritch horrors.</p>
+            <ul>
+              <li><strong>Low Sanity</strong> — Screen effects distort, text scrambles.</li>
+              <li><strong>Zero Sanity</strong> — Character goes mad and becomes uncontrollable!</li>
+            </ul>
+            <p class="tutorial-tip">💡 <strong>Tip:</strong> Rest at safe rooms and use items to restore sanity.</p>
+          </div>
+        </div>
+        
+        <!-- Slide 4: Party & Companions -->
+        <div class="tutorial-slide" data-slide="4">
+          <div class="tutorial-image party-grid">
+            <img src="assets/img/ally_portrait/alchemist_male.png" alt="Alchemist">
+            <img src="assets/img/ally_portrait/cleric_female.png" alt="Cleric">
+            <img src="assets/img/ally_portrait/monk_male.png" alt="Monk">
+            <img src="assets/img/ally_portrait/monster_male.png" alt="Aberration">
+          </div>
+          <div class="tutorial-text">
+            <h3>🤝 Your Party</h3>
+            <p>You begin with one companion and can summon more during exploration:</p>
+            <ul>
+              <li><strong>Warrior</strong> — High HP, strong attacks, defensive abilities.</li>
+              <li><strong>Alchemist</strong> — Poisons, potions, and tactical debuffs.</li>
+              <li><strong>Cleric</strong> — Healing, sanity restoration, holy damage.</li>
+              <li><strong>Monk</strong> — Balanced fighter with stuns and self-healing.</li>
+              <li><strong>Aberration</strong> — Monstrous form with powerful but sanity-draining abilities.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Slide 5: Status Effects -->
+        <div class="tutorial-slide" data-slide="5">
+          <div class="tutorial-image status-grid">
+            <div class="status-demo"><span class="status-icon">💫</span> Stun</div>
+            <div class="status-demo"><span class="status-icon">🧪</span> Poison</div>
+            <div class="status-demo"><span class="status-icon">🔥</span> Burning</div>
+            <div class="status-demo"><span class="status-icon">🩸</span> Bleeding</div>
+            <div class="status-demo"><span class="status-icon">🌀</span> Charmed</div>
+            <div class="status-demo"><span class="status-icon">⚔️</span> Attack Up</div>
+            <div class="status-demo"><span class="status-icon">🛡️</span> Defense Up</div>
+            <div class="status-demo"><span class="status-icon">💚</span> Regen</div>
+          </div>
+          <div class="tutorial-text">
+            <h3>✨ Status Effects</h3>
+            <p>Abilities can inflict or grant various effects:</p>
+            <ul>
+              <li><strong>💫 Stun</strong> — Skip next turn.</li>
+              <li><strong>🧪 Poison / 🔥 Burn / 🩸 Bleed</strong> — Damage over time.</li>
+              <li><strong>🌀 Charmed</strong> — May attack allies instead!</li>
+              <li><strong>⚔️🛡️ Buffs</strong> — Temporary stat increases.</li>
+              <li><strong>💚 Regen</strong> — Heal over time.</li>
+            </ul>
+            <p class="tutorial-tip">💡 <strong>Tip:</strong> Status icons appear on character cards during combat.</p>
+          </div>
+        </div>
+        
+        <!-- Slide 6: Exploration -->
+        <div class="tutorial-slide" data-slide="6">
+          <div class="tutorial-image">
+            <img src="assets/img/environment/crypt_corridor.png" alt="Exploration">
+          </div>
+          <div class="tutorial-text">
+            <h3>🗺️ Exploration</h3>
+            <p>Between battles, explore the crypt:</p>
+            <ul>
+              <li><strong>Rooms</strong> — Each has unique events, loot, or encounters.</li>
+              <li><strong>Choices</strong> — Your decisions affect the narrative and rewards.</li>
+              <li><strong>Items</strong> — Find potions, weapons, and artifacts in your inventory.</li>
+              <li><strong>Paths</strong> — Choose which direction to advance deeper.</li>
+            </ul>
+            <p class="tutorial-tip">💡 <strong>Tip:</strong> Enable Gemini AI in Options for dynamic, AI-generated narratives!</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tutorial-nav">
+        <button id="btn-tutorial-prev" class="menu-btn" disabled>← Previous</button>
+        <button id="btn-tutorial-close" class="menu-btn danger">Close</button>
+        <button id="btn-tutorial-next" class="menu-btn primary">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio elements -->
+  <audio id="main-screen-music" src="music/main_screen_music.mp3" preload="auto" loop></audio>
+
+  <!-- Scripts -->
+  <script src="data_fallbacks.js"></script>
+  <script src="config.js"></script>
+  <script src="start_screen.js"></script>
+</body>
+</html>

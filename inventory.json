@@ -1,0 +1,207 @@
+﻿[
+  {
+    "item_id": "vial_vital_humours",
+    "name": "Vial of Vital Humours",
+    "description": "A stoppered glass vial of thick, ruddy fluid that faintly warms to the touch, said to restore what the crypt slowly steals away.",
+    "image": "./assets/img/item_portrait/vial_vital_humours.png",
+    "type": "consumable",
+    "usableContexts": ["combat", "exploration"],
+    "targetType": "ally",
+    "effects": [
+      { "kind": "hp", "mode": "heal", "dice": "3d12" }
+    ]
+  },
+  {
+    "item_id": "tincture_of_lucidity",
+    "name": "Tincture of Lucidity",
+    "description": "An acrid, shimmering draught that briefly sharpens thought and pushes back the whispering dark.",
+    "image": "./assets/img/item_portrait/tincture_of_lucidity.png",
+    "type": "consumable",
+    "usableContexts": ["combat", "exploration"],
+    "targetType": "ally",
+    "effects": [
+      { "kind": "sanity", "mode": "heal", "dice": "3d12" }
+    ]
+  },
+  {
+    "item_id": "coagulant_seal_bandages",
+    "name": "Coagulant Seal Bandages",
+    "description": "Bandages steeped in an alchemical coagulant that hardens on contact with blood, sealing even grievous wounds.",
+    "image": "./assets/img/item_portrait/coagulant_seal_bandages.png",
+    "type": "consumable",
+    "usableContexts": ["combat", "exploration"],
+    "targetType": "ally",
+    "effects": [
+      { "kind": "cure_status", "status": "bleeding" },
+      { "kind": "hp", "mode": "heal", "dice": "3d8" }
+    ]
+  },
+  {
+    "item_id": "berserker_blood",
+    "name": "Berserker Blood",
+    "description": "A violent crimson tincture that tastes of iron and ash, sending the drinker into a controlled frenzy.",
+    "image": "./assets/img/item_portrait/berserker_blood.png",
+    "type": "consumable",
+    "usableContexts": ["combat"],
+    "targetType": "self",
+    "effects": [
+      { "kind": "buff", "stat": "attackDamage", "dice": "2d4", "duration": 3 }
+    ]
+  },
+  {
+    "item_id": "nightshade_resin",
+    "name": "Nightshade Resin",
+    "description": "A tar-thick, violet resin distilled from forbidden herbs, applied to blades to deliver a slow and dreadful demise.",
+    "image": "./assets/img/item_portrait/nightshade_resin.png",
+    "type": "consumable",
+    "usableContexts": ["combat", "exploration"],
+    "targetType": "self",
+    "effects": [
+      { "kind": "weapon_coating", "coatingType": "poison", "damagePerTurn": "1d6", "duration": 3 }
+    ]
+  },
+  {
+    "item_id": "black_tar_pitch",
+    "name": "Black Tar Pitch",
+    "description": "A heavy, reeking pitch that clings to metal and flesh alike, eager to catch fire at the slightest spark.",
+    "image": "./assets/img/item_portrait/black_tar_pitch.png",
+    "type": "consumable",
+    "usableContexts": ["combat", "exploration"],
+    "targetType": "self",
+    "effects": [
+      { "kind": "weapon_coating", "coatingType": "fire", "damagePerTurn": "1d6", "duration": 3 }
+    ]
+  },
+  {
+    "item_id": "chillwater_vapours_phial",
+    "name": "Chillwater Vapours Phial",
+    "description": "A small glass phial that releases a burst of ghostly cold mist, smothering embers and searing heat.",
+    "image": "./assets/img/item_portrait/chillwater_vapours_phial.png",
+    "type": "consumable",
+    "usableContexts": ["combat", "exploration"],
+    "targetType": "ally",
+    "effects": [
+      { "kind": "cure_status", "status": "burning" }
+    ]
+  },
+  {
+    "item_id": "purging_bitter_tincture",
+    "name": "Purging Bitter Tincture",
+    "description": "A foul, herbal distillate that scours the veins, driving out toxins at the cost of a moment's agony.",
+    "image": "./assets/img/item_portrait/purging_bitter_tincture.png",
+    "type": "consumable",
+    "usableContexts": ["combat", "exploration"],
+    "targetType": "ally",
+    "effects": [
+      { "kind": "cure_status", "status": "poisoned" }
+    ]
+  },
+  {
+    "item_id": "coagulant_seal_tonic",
+    "name": "Coagulant Seal Tonic",
+    "description": "A concentrated draught of clotting reagents, taken internally to arrest internal bleeding.",
+    "image": "./assets/img/item_portrait/coagulant_seal_tonic.png",
+    "type": "consumable",
+    "usableContexts": ["combat", "exploration"],
+    "targetType": "ally",
+    "effects": [
+      { "kind": "cure_status", "status": "bleeding" }
+    ]
+  },
+  {
+    "item_id": "dreamless_incense",
+    "name": "Dreamless Incense",
+    "description": "A bundle of grey-blue incense sticks that burn with a cold, smokeless glow, ushering the party into mercifully dreamless rest.",
+    "image": "./assets/img/item_portrait/dreamless_incense.png",
+    "type": "consumable",
+    "usableContexts": ["exploration"],
+    "targetType": "party",
+    "effects": [
+      { "kind": "rest" }
+    ]
+  },
+  {
+    "item_id": "sigil_of_warding",
+    "name": "Sigil of Warding",
+    "description": "A palm-sized talisman etched with interlocking runes that flare to life when invoked, deflecting harm for a fleeting moment.",
+    "image": "./assets/img/item_portrait/sigil_of_warding.png",
+    "type": "consumable",
+    "usableContexts": ["combat"],
+    "targetType": "ally",
+    "effects": [
+      { "kind": "barrier", "duration": 2 }
+    ]
+  },
+  {
+    "item_id": "chains_of_old",
+    "name": "Chains of Old",
+    "description": "A brittle parchment inscribed with ancient binding script; when torn, spectral chains lash out to fetter the unwilling.",
+    "image": "./assets/img/item_portrait/chains_of_old.png",
+    "type": "consumable",
+    "usableContexts": ["combat"],
+    "targetType": "enemy",
+    "effects": [
+      { "kind": "immobilize", "duration": 2 }
+    ]
+  },
+  {
+    "item_id": "eldritch_discord",
+    "name": "Eldritch Discord",
+    "description": "A whispered incantation in a language never meant for mortal tongues, turning ordered thought into murderous chaos.",
+    "image": "./assets/img/item_portrait/eldritch_discord.png",
+    "type": "consumable",
+    "usableContexts": ["combat"],
+    "targetType": "enemy",
+    "effects": [
+      { "kind": "confusion", "duration": 2 }
+    ]
+  },
+  {
+    "item_id": "herbal_tonic",
+    "name": "Herbal Tonic",
+    "description": "A simple herbal brew that soothes minor aches and restores a bit of vigor.",
+    "image": "./assets/img/item_portrait/herbal_tonic.png",
+    "type": "consumable",
+    "usableContexts": ["combat", "exploration"],
+    "targetType": "ally",
+    "effects": [
+      { "kind": "hp", "mode": "heal", "dice": "1d6+2" }
+    ]
+  },
+  {
+    "item_id": "scroll_spirit_guardian",
+    "name": "Scroll of Spirit Guardian",
+    "description": "An ancient parchment inscribed with binding runes. When read aloud, it calls forth a spectral guardian to fight alongside you.",
+    "image": "./assets/img/item_portrait/summon_spirit_guardian_scroll.png",
+    "type": "consumable",
+    "usableContexts": ["combat"],
+    "targetType": "self",
+    "effects": [
+      { "kind": "summon", "summonId": "spirit_guardian" }
+    ]
+  },
+  {
+    "item_id": "scroll_shadow_familiar",
+    "name": "Scroll of Shadow Familiar",
+    "description": "A dark scroll that writhes with living shadows. Speaking its words unleashes a swift and deadly familiar.",
+    "image": "./assets/img/item_portrait/summon_shadow_hunter.png",
+    "type": "consumable",
+    "usableContexts": ["combat"],
+    "targetType": "self",
+    "effects": [
+      { "kind": "summon", "summonId": "shadow_familiar" }
+    ]
+  },
+  {
+    "item_id": "scroll_healing_wisp",
+    "name": "Scroll of Healing Wisp",
+    "description": "A luminous scroll that glows with gentle warmth. Its incantation summons a healing wisp to tend to your wounds.",
+    "image": "./assets/img/item_portrait/summon_healing_wisp.png",
+    "type": "consumable",
+    "usableContexts": ["combat"],
+    "targetType": "self",
+    "effects": [
+      { "kind": "summon", "summonId": "healing_wisp" }
+    ]
+  }
+]
